@@ -1,0 +1,49 @@
+<%- include('partials/header') -%>
+<h1 style="margin-top: 3rem;
+font-family: 'Montserrat', sans-serif;
+font-size: 200%;
+color: #328683;">Edit</h1>
+
+<form action="/editProfile" method="POST">
+
+    <div class="form-group">
+      <label style="position: relative;top: 1.5rem;color: gray;" for="exampleInputEmail1" class="form-label"><span style="color: red;">* </span>Name </label>
+
+        <input name="uname" style="margin-top:1.5rem" type="text" class="form-control" value="<%=name%>" required >
+      </div>
+        <div class="form-group">
+          <label style="position: relative;top: 1rem;color: gray;" for="exampleInputEmail1" class="form-label"><span style="color: red;">* </span>Email  </label>
+
+          <input name="usrname" style="margin-top:0.8rem" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=username%>" required >
+        </div>
+        <div class="form-group">
+          <label style="position: relative;top: 1rem;color: gray;" for="exampleInputEmail1" class="form-label"><span style="color: red;">* </span>Password </label>
+
+          <input name="passwd" style="margin-top:0.8rem" type="password" class="form-control" id="exampleInputPassword1" placeholder="New Password" required>
+        </div>
+        <div class="form-group">
+          <label style="position: relative;top: 1rem;color: gray;" for="exampleInputEmail1" class="form-label"><span style="color: red;">* </span>Age </label>
+
+          <input name="age" style="margin-top:0.8rem" type="number" class="form-control"  value="<%=age%>" required>
+        </div>
+        <div class="form-group">
+          <label style="position: relative;top: 1rem;color: gray;" for="exampleInputEmail1" class="form-label"><span style="color: red;">* </span>Country </label>
+
+          <input name="country" style="margin-top:0.8rem" type="text" class="form-control" id="exampleInputPassword1" value="<%=country%>"required>
+        </div>
+        
+        <a style="margin-top:0.8rem"  class="btn btn2" href="/editProfPic">Change Profile Picture</a>
+
+        <ul>
+            <li style="color: rgb(173, 171, 171); margin-top: 0.5rem;">All Fields are mandatory. Can be similar to the previous credentials.</li>
+        </ul>
+        <button style="width: 8rem;"  class="btn btn1" type="submit">Update</button>
+        
+       
+      
+
+
+</form>
+
+
+<%- include('partials/footer') -%> 

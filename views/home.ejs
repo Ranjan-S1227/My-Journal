@@ -1,0 +1,68 @@
+<%- include('partials/header'); -%>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<h1 style="font-family: 'Montserrat', sans-serif;
+font-size: 200%;
+color: #328683;
+margin-top: 3.5rem;"><%=today%></h1>
+
+<%var last = data[data.length-1].dateOfPost%>
+<% if(last!=today){%>
+ <h5 style="margin-top: 6rem;color: gray;font-family: 'Montserrat', sans-serif;" >No Posts yet ! Be the First one to Post.</h5>
+    <a class="btn btn2" href="/compose">Compose</a>
+<%}%>
+
+<%data=data.reverse()%>
+ <% for(var i=0; i<data.length ; i++){ %>
+    <% if(data[i].dateOfPost==today){%>
+       
+  <div id="Dbox" style="margin-left: 4rem;" class="box zoom" >
+     <div class="profileimg">
+<img  style="border-radius: 50%;width: 5rem;position: relative;right: 8rem;top: 2rem;border-style: solid;border-color: #7bc2c2;max-width: 100%;" src="public/images/<%=data[i].profilePicture%>" alt="profile" >
+</div>
+      <div class="contentHome" style="position: relative;bottom: 5rem;right: 0.5rem;">
+  <h3 style="color: rgb(80, 80, 80);font-family: 'Poppins', sans-serif;  "> <%= data[i].postTitle %> </h3>
+      <p style="color: #6ac5c7;position: relative;bottom: 0.4rem; font-size: 0.85rem;font-family: 'Poppins', sans-serif;
+      "><%=data[i].username%></p>
+  
+  <div style="position: relative;bottom: 0.5rem;" >
+  <p style="font-size: 120%; font-size: 1rem; position: relative;font-family: 'Poppins', sans-serif;
+  "><%= data[i].post.substring(0,50)+"..." %>
+     <a style="color: #5b7a7a; font-size: 0.8rem;" href="/posts/<%=data[i]._id%>">Read More</a>
+    </div>
+    <div class="todayPic" >
+     <img class="zzz" style=" border-radius: 5%;height: 11rem; width: 11rem;position: relative;left: 45rem;bottom: 8.7rem;max-width: 100%;max-height: 100%;" src="public/images/<%=data[i].picOfDay%>" alt="profile" >
+    </div>
+    </div>
+     <%if(data[i].username==usr){%>
+       
+       <div style="position: relative;bottom: 8rem;right: 0.5rem;">
+        <form id="thisForm" class="del" action="/<%=data[i]._id %>?_method=DELETE" method="POST" >
+           <a onclick="document.getElementById('thisForm').submit();"  style="position: relative;left: 4rem;bottom: 7.4rem;"><i class="fa-solid fa-trash icon-del fa-lg"></i></a>
+       </form>
+
+       <a style="position: relative;bottom: 8.9rem;left: 0.2rem;"  href="/edit/<%=data[i]._id%>"><i class="fa-solid fa-pen-to-square icon fa-lg"></i></a>
+       
+       <a style="position: relative;bottom: 8.9rem;left: 0.5rem;"  href="/posts/<%=data[i]._id%>/#bottom"><i class="fa-regular fa-comment icon fa-lg"></i></a>
+       
+    </div>
+       <%}else{%>
+        <a href="/posts/<%=data[i]._id%>/#bottom" style="font-size: 0.8rem ;color:#49b2b4;position:relative;bottom: 16rem;right: 1rem; "class="btn btn-outline-light ">Comments</a>
+        <%}%>
+     
+  </p>
+ 
+  </div>
+   <%}else{ %>
+
+    <%}%>
+  <%} %> 
+
+
+     
+
+  
+
+
+<%- include('partials/footer'); -%>

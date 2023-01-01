@@ -1,0 +1,81 @@
+<%- include("partials/header") -%>
+
+
+
+<%if(flag==1){%>
+<h1 style="margin-top: 10rem;
+font-family: 'Montserrat', sans-serif;
+font-size: 200%;
+color: #328683;">You have already posted for today! Edit the post or delete and comeback. </h1>
+  <%}else{%>
+
+<%if(foundUser.profilePic==null){%>
+<h1 style="margin-top: 10rem;
+font-family: 'Montserrat', sans-serif;
+font-size: 200%;
+color: #328683;">Complete your profile and update Profile picture before composing.</h1>
+<a style="width: 9rem;" class="btn btn1" href="/profile">Update Profile</a>
+<%}else{%>
+    <h1 
+    style="
+    margin-top: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 200%;
+    color: #328683;
+    ">Compose</h1>
+
+<form style="margin-top: 1.5em"  method="POST" id="addPost" enctype="multipart/form-data">
+    <div class="form-group">
+        <label style="font-family: 'Montserrat', sans-serif; color: #328683;  "><span style="color: red;">*</span> Title (Only 30 characters allowed)</label>
+        <input id="postTitle" class="form-control" type="text" placeholder="Type here..." name="postTitle" required maxlength="30">
+        <label style="font-family: 'Montserrat', sans-serif; color: #328683; margin-top: 0.8rem;" ><span style="color: red;">*</span>Post</label>
+        <textarea id="postBody" class="form-control" name="postBody" rows="5" cols="30" required></textarea>
+        <label style="font-family: 'Montserrat', sans-serif; color: #328683;margin-top: 1.4rem;margin-bottom: 0.5rem; "><span style="color: red;">*</span>Picture of the Day</label>
+        <input id="file" class="form-control" type="file"  name="file" required>
+
+
+    </div>
+    <input  class="btn btn2" type="submit" value="Post" style="margin-top: 2rem;color: #328683;width: 8rem;">
+
+   
+</form> 
+<%}%>
+<%}%>
+<script>
+
+$('#addPost').submit(function(event){
+    event.preventDefault();
+
+var fd = new FormData();    
+
+fd.append( 'file', $('#file')[0].files[0] );
+fd.append('postTitle',$('#postTitle').val())
+fd.append('postBody',$('#postBody').val())
+
+// console.log(fd)
+
+$.ajax({
+  url: '/compose',
+  data: fd,
+  //use below only when passing in FormData 
+  processData: false,
+  contentType: false,
+  type: 'POST',
+  success: function(){
+    
+      alert("Posted")
+      window.location = 'home';
+
+    
+    
+  }
+});
+  
+})
+</script>
+
+
+
+
+
+<%- include("partials/footer") -%>

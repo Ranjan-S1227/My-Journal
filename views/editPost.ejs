@@ -1,0 +1,73 @@
+<%- include('partials/header') -%>
+<h1 style="margin-top: 3rem;
+font-family: 'Montserrat', sans-serif;
+font-size: 200%;
+color: #328683;">Edit Post</h1>
+
+<form style="margin-top: 1.5em" method="POST" id="postEditForm" enctype="multipart/form-data">
+    <div class="form-group">
+        <label style="font-family: 'Montserrat', sans-serif; color: #328683; " >Title(Only 30 characters allowed)</label>
+        <input id="postTitle" class="form-control" type="text" placeholder="Type here..." name="postTitle" required value="<%=myPost.postTitle%>" maxlength="30">
+        <label style="font-family: 'Montserrat', sans-serif; color: #328683; margin-top: 0.8rem; " >Post</label>
+        <textarea id="postBody" class="form-control" name="postBody" rows="5" cols="30" ><%=myPost.post%></textarea>
+        <label style="font-family: 'Montserrat', sans-serif; color: #328683;margin-top: 1.4rem;margin-bottom: 0.5rem; ">Picture of the Day</label>
+        <input id="file" class="form-control" type="file"  name="file" required >
+
+    </div>
+    <input class="btn btn-light" type="submit" value="Edit" style="margin-top: 2rem;color: #328683;"></input>
+
+   
+</form> 
+
+
+
+<script>
+
+    $('#postEditForm').submit(function(event){
+        event.preventDefault();
+    var idPost='<%=myPost._id%>'
+        // var formData={
+        //     _id:idPost,
+        //     postTitle:postEditForm.postTitle.value,
+        //     post:postEditForm.postBody.value
+
+        // }
+        // //    console.log(formData)
+    
+        // $.ajax({
+        //     url:"/editpost",
+        //     type:"POST",
+        //     data:formData,
+        //     success: function(response){
+        //     alert("Posted !!")
+        //     }
+        // })
+
+
+var fd = new FormData();    
+
+fd.append( 'file', $('#file')[0].files[0] );
+fd.append('postTitle',$('#postTitle').val())
+fd.append('post',$('#postBody').val())
+fd.append('idPost',idPost)
+
+console.log(fd)
+
+$.ajax({
+  url: '/editpost',
+  data: fd,
+  processData: false,
+  contentType: false,
+  type: 'POST',
+  success: function(){
+    alert("Posted !");
+  }
+});
+        
+    })
+    
+    
+    </script>
+
+
+<%- include('partials/footer') -%> 

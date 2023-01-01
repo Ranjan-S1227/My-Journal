@@ -1,0 +1,62 @@
+<%- include("partials/header") %>
+
+<div style="display: flex; justify-content: center;margin-top: 2rem;">
+<div class="card" style="width: 60rem;">
+
+  <img  src="public/images/<%=postImg%>" alt="Picture of the Day." >
+  <div style=" position: absolute;text-align: center;">  
+  <p style=" font-family:Arial, Helvetica, sans-serif;color: azure;font-size: 0.9rem; border-style: solid;border-width: 0.2rem;width: 9rem;border-color:#38b4b6 ;background-color:#38b4b6;" >Picture of the Day !</p>
+ </div>
+
+  <div  class="card-body">
+  <h2 class="card-text" style="color: rgb(86, 87, 87);font-family: 'Poppins', sans-serif;"> <%= title %> </h2>
+ <p style="font-family: 'Poppins', sans-serif;" class="card-text"  > <%= content %> </p>
+ <hr style="margin-top:4rem;">
+
+ 
+ <h5 style="margin-top: 2.5rem;color: #7c7c7c;margin-bottom: 0.7rem;font-family: 'Poppins', sans-serif;
+font-weight: 1000;margin-bottom: 2rem; ">Comments</h5>
+
+  
+<div id="comments"  style="position: relative;" >
+  <% comments.forEach(function(comment){%>
+    <h6 style="font-family: 'Poppins', sans-serif;" ><p><%=comment.commentorName%></p></h6>
+    <h6 style="font-size: 0.8rem;color: #6db0b1;position: relative;bottom: 0.5rem;font-family: 'Poppins', sans-serif;"  class="card-subtitle mb-2 "><%=comment.commentor%></h6>
+    <p style="font-family: 'Poppins', sans-serif;margin-bottom: 2rem;" class="card-text"><%=comment.commented%></p>
+
+   <hr style="color: #d3d2d2;">
+  </div>
+
+   <div>
+   <%if(comment.commentor==namee){%>
+  
+  <form id="thisForm" class="del" action="/del/<%=thisPostId%>/<%=comment._id %>?_method=DELETE" method="POST" >
+    <a style="position: relative;bottom: 6rem;left: 53rem;" onclick="document.getElementById('thisForm').submit();" ><i class="fa-solid fa-trash icon-del fa-lg"></i></a>
+</form>
+<%}%>
+<% })%>
+</div>
+
+
+
+
+
+
+ <br>
+
+
+
+
+
+<div id="bottom"></div>
+
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+<%- include("partials/footer") %>

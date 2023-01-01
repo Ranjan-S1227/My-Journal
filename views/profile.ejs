@@ -1,0 +1,32 @@
+<%- include('partials/header') -%>
+<div class="profileForm">
+
+<div style="margin-top: 1.75rem; width: 370px;height:215 px;">
+<a  href="./editProfPic"><img class="profilePicture"src="/public/images/<%=profileImg%>"  alt="IMAGE"/>
+</a>
+
+<div style="margin-top: 5rem; margin-left: 2.7rem;margin-left: 2.7;">
+    
+<p style="font-family: 'Montserrat', sans-serif;color:#328683 ;font-size: 1.2rem; position: relative;bottom: 5.0rem;right: 1.5rem;"><%=myName%></p>
+<p style="color:#529795;font-size: 0.75rem; position: relative;bottom: 6.2rem;right: 1.5rem;"><%=username%></p>
+</div>
+</div>
+
+
+
+<div style="position: relative;bottom: 5rem;">
+<a style=" width: 8em;" class="btn btn2 center" role="button" href="/myPosts">My Posts</a>
+<br>
+<a style="margin-top: 0.8rem; width: 8rem;" class="btn btn2 " role="button" href="/editProfile">Edit Profile</a>
+<br>
+<a style="margin-top: 0.8rem;width: 8rem;background-color: #529795;color: white; " class="btn btn2" role="button" href="/logout">Logout</a>
+<br>
+<a onclick="return confirm('Are you sure you want to Delete the account?');"
+style="margin-top: 4rem;" class="btn btn-outline-danger" role="button" href="/deleteAcc">DELETE ACCOUNT</a>
+<p style="color: rgb(250, 77, 77); font-size: 0.75rem;position: relative;top: 0.6rem;">Danger! Once Deleted, no going back. Please be certain</p>
+</div>
+
+</div>
+<%- include('partials/footer') -%> 
+
+

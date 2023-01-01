@@ -1,0 +1,18 @@
+<%- include('partials/header') -%>
+<h1 style="margin-top: 3rem;
+font-family: 'Montserrat', sans-serif;
+font-size: 200%;
+color: #328683;">My Posts</h1>
+
+<% for(var i=0; i<myPosts.length ; i++){ %>
+    <div class="box zoom" >
+    <h3 style="color: rgb(80, 80, 80); "> <%= myPosts[i].postTitle %> </h3>
+    
+    <p style="color: #62B6B7;position: relative;bottom: 0.4rem; font-size: 0.85rem;"><%=myPosts[i].dateOfPost%></p>
+
+    <p style="font-size: 120%; font-size: 1rem;"> <%= myPosts[i].post.substring(0,100)+"..." %> 
+    <a style="color: #5b7a7a;" href="/myPosts/<%=myPosts[i]._id%>">Read More</a>
+    </p>
+    </div>
+    <%} %>
+<%- include('partials/footer') -%> 
