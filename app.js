@@ -172,7 +172,7 @@ passport.deserializeUser(function(user, cb) {
 passport.use(new GoogleStrategy({
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: "http://localhost:3000/auth/google/intro",
+  callbackURL: "https://my-journal-jd6e.onrender.com/auth/google/intro",
   // the below line is added because google+ is no more supported.
   userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
 
