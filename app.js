@@ -97,9 +97,9 @@ app.use(passport.session());
 
 
 mongoose.set("strictQuery", false);
-mongoose.connect("mongodb://localhost:27017/mjUsersDB",{useNewUrlParser: true});
+// mongoose.connect("mongodb://localhost:27017/mjUsersDB",{useNewUrlParser: true});
 
-// mongoose.connect("mongodb+srv://RanjanSatish:Ranjan1227@myjournal.59ylq4n.mongodb.net/mjUsersDB",{useNewUrlParser: true});
+mongoose.connect("mongodb+srv://RanjanSatish:Ranjan1227@myjournal.59ylq4n.mongodb.net/mjUsersDB",{useNewUrlParser: true});
 
 
 
