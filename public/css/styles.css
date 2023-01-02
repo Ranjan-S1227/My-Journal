@@ -180,11 +180,13 @@ position: absolute;
 }
 
 .profilePicture{
+  width:16vmin; height:16vmin; 
   border-radius: 50%;
   border-style: solid ;
  border-color: #a7d6d5;
   
-  width: 9rem;
+  
+  
 
   
 

@@ -97,9 +97,9 @@ app.use(passport.session());
 
 
 mongoose.set("strictQuery", false);
-// mongoose.connect("mongodb://localhost:27017/mjUsersDB",{useNewUrlParser: true});
+mongoose.connect("mongodb://localhost:27017/mjUsersDB",{useNewUrlParser: true});
 
-mongoose.connect("mongodb+srv://RanjanSatish:Ranjan1227@myjournal.59ylq4n.mongodb.net/mjUsersDB",{useNewUrlParser: true});
+// mongoose.connect("mongodb+srv://RanjanSatish:Ranjan1227@myjournal.59ylq4n.mongodb.net/mjUsersDB",{useNewUrlParser: true});
 
 
 
@@ -179,7 +179,7 @@ passport.use(new GoogleStrategy({
 },
 function(accessToken, refreshToken, profile, cb) {
     //npm i mongoose-findorcreate
-    console.log(profile)
+    // console.log(profile)
     //console.log(accessToken)
   User.findOrCreate({ googleId: profile.id,name:profile.displayName,username:profile._json.email}, function (err, user) {
     return cb(err, user);
@@ -231,6 +231,15 @@ app.get("/home", function(req,res){
 app.get("/intro",function(req,res){
   if(req.isAuthenticated()){
   res.render("intro")
+  }
+  else{
+    res.render("head")
+  }
+})
+
+app.get("/about2",function(req,res){
+  if(req.isAuthenticated()){
+  res.render("about2")
   }
   else{
     res.render("head")
@@ -319,12 +328,10 @@ app.get("/forgotPassword",(req,res)=>{
   })
 
 app.get("/about", function(req,res){
-  if(req.isAuthenticated()){
+  
     res.render("about");
-  }
-  else{
-    res.redirect("/head");
-  }
+  
+  
   
 });
 
@@ -367,7 +374,7 @@ if(req.isAuthenticated()){
      }
      else{
        var thisUser=req.user.username;
-       console.log(found);
+      //  console.log(found);
  
        for(var i=0;i<found.length;i++){
          if(found[i].username==thisUser && found[i].dateOfPost==currentDay){
@@ -439,7 +446,7 @@ app.get("/posts/:id", async (req,res)=>{
           
           var myName;
           var namee=req.user.username
-          console.log(namee)
+          // console.log(namee)
           for(var i=0;i<foundUser.length;i++){
             
             myName=foundUser[i].name
@@ -821,7 +828,7 @@ User.find({username:req.body.email},(err,found)=>{
           id:found[i]._id
         }
         const token=jwt.sign(payload,secret,{expiresIn:"15m"});
-        const link=`http://localhost:3000/reset-password/${found[i]._id}/${token}`
+        const link=`https://my-journal-jd6e.onrender.com/${found[i]._id}/${token}`
         console.log(link)
 
         async function sendMail(){

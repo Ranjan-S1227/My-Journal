@@ -5,10 +5,13 @@
   <meta charset="utf-8">
   <title>My Journal</title>
   <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="public/images/Black_and_White_Typographic_Restaurant_Logo-2-removebg-preview.png"/>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <!-- socket.io for realtime updates -->
+<link rel="shortcut icon" href="public/images/Black_and_White_Typographic_Restaurant_Logo-2-removebg-preview.png" type="image/x-icon">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js" integrity="sha512-YeeA/Qxn5hYdkukScTCNNOhTrv1C2RubAGButJ1rmgQwZf/HdRaCGl+JAVkqsqaNRaYNHdheiuKKuPf9mDcqKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="public/css/styles.css">
@@ -19,16 +22,31 @@
   <script src="https://kit.fontawesome.com/8b345ad81c.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet"></head>
-
  </head>
 <body >
+
+
+
+
+
+
       <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
           <a class="navbar-brand MyJournal" href="#">My Journal</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-        
+          <div class="collapse navbar-collapse Navlinks" id="navbarNav">
+            <ul class="navbar-nav ms-auto ">
+             
+              
+              <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+              </li>
+          
+              
+            </ul>
+          </div>
         </div>
       </nav>
       <div class="head1" style="position: relative;top: 10rem;left: 18rem;width: 30rem;">
@@ -38,7 +56,7 @@
           <div style="position: relative;left: 17.5rem;top: 3rem;height: 40rem;">
           <a href="/login" style="width: 8rem;" class="btn btn1 ">Login</a>
           <a href="/register" style="width:8rem" class="btn btn2 ">Register</a>
-          <img style="position:relative;left:28.8rem;bottom: 20rem;width: 40rem;transform: scaleX(-1);" src="public/images/Untitled_design-2-removebg-preview.png" alt="img1">
+          <img id="thisImg" style="position:relative;left:16rem;bottom: 20rem;width: 40rem;transform: scaleX(-1);" src="public/images/Untitled_design-2-removebg-preview.png" alt="img1">
           
       </div>
     </div>
@@ -46,13 +64,10 @@
         <div class="container"> 
 
 
-            <style>
-                html, body {
-  
-  overflow-y: hidden;
-}
-body {
-  position: relative
-}
-                
-            </style>
+      
+<script>
+$(document).ready(function(){
+    $("#thisImg").fadeOut(3000);
+})
+
+</script>
