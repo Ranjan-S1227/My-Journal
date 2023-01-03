@@ -11,3 +11,9 @@ The post shared is available only for 24hrs, but all posts till date can be acce
 Real time comments.
 Profile edit and delete options available.
 
+### Tech Stack
+Frontend: HTML,CSS,Bootstrap,Javascript
+Backend: Node.js, Express.js
+Database: MongoDB
+Other Middlewares: 
+
