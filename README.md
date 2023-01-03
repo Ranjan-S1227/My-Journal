@@ -12,7 +12,9 @@ Real time comments.
 Profile edit and delete options available.
 
 ### Tech Stack
+
 Frontend: HTML,CSS,Bootstrap,Javascript
+<br>
 Backend: Node.js, Express.js
 Database: MongoDB
 Other Middlewares: 
