@@ -19,7 +19,7 @@ Backend: Node.js, Express.js
 <br>
 Database: MongoDB
 <br>
-Other Middlewares: 
+Other Middlewares & libraries: 
 <ul>
 <li>
   Multer: For handling multipart/form-data, which is primarily used for uploading files.
@@ -29,6 +29,9 @@ Other Middlewares:
   </li>
   <li>
   Nodemailer: Send emails from Node.js.(For password reset link)
+  </li>
+   <li>
+  Socket.io:  A library that enables real-time, bidirectional and event-based communication between the browser and the server.
   </li>
   
 
