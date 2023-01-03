@@ -16,6 +16,16 @@ Profile edit and delete options available.
 Frontend: HTML,CSS,Bootstrap,Javascript
 <br>
 Backend: Node.js, Express.js
+<br>
 Database: MongoDB
+<br>
 Other Middlewares: 
+<ul>
+<li>
+  Multer: For handling multipart/form-data, which is primarily used for uploading files
+  </li>
+
+
+
+</ul>
 
