@@ -97,9 +97,10 @@ app.use(passport.session());
 
 
 mongoose.set("strictQuery", false);
-// mongoose.connect("mongodb://localhost:27017/mjUsersDB",{useNewUrlParser: true});
+mongoose.connect("mongodb://localhost:27017/mjUsersDB",{useNewUrlParser: true});
 
-mongoose.connect("mongodb+srv://RanjanSatish:Ranjan1227@myjournal.59ylq4n.mongodb.net/mjUsersDB",{useNewUrlParser: true});
+
+// mongoose.connect("mongodb+srv://RanjanSatish:Ranjan1227@myjournal.59ylq4n.mongodb.net/mjUsersDB",{useNewUrlParser: true});
 
 
 
@@ -172,7 +173,7 @@ passport.deserializeUser(function(user, cb) {
 passport.use(new GoogleStrategy({
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: "https://my-journal-jd6e.onrender.com/auth/google/intro",
+  callbackURL: "http://localhost:3000/auth/google/intro",
   // the below line is added because google+ is no more supported.
   userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
 
@@ -828,7 +829,7 @@ User.find({username:req.body.email},(err,found)=>{
           id:found[i]._id
         }
         const token=jwt.sign(payload,secret,{expiresIn:"15m"});
-        const link=`https://my-journal-jd6e.onrender.com/${found[i]._id}/${token}`
+        const link=`http://localhost:3000/reset-password/${found[i]._id}/${token}`
         console.log(link)
 
         async function sendMail(){
