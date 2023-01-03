@@ -22,10 +22,15 @@ Database: MongoDB
 Other Middlewares: 
 <ul>
 <li>
-  Multer: For handling multipart/form-data, which is primarily used for uploading files
+  Multer: For handling multipart/form-data, which is primarily used for uploading files.
   </li>
-
-
+  <li>
+  Passport: Authentication middleware for Node.js.(Google Signup)
+  </li>
+  <li>
+  Nodemailer: Send emails from Node.js.(For password reset link)
+  </li>
+  
 
 </ul>
 
