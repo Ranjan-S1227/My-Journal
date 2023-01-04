@@ -42,6 +42,17 @@ Other Middlewares & libraries:
 
 ![Screenshot 2023-01-04 at 9 40 40 AM](https://user-images.githubusercontent.com/76945354/210484641-81171ab9-2e58-4ce6-b56a-3924bdaf608a.png)
 
+<br>
+<img width="1440" alt="Screenshot 2023-01-04 at 9 40 58 AM" src="https://user-images.githubusercontent.com/76945354/210484825-e8d256d6-36a0-413b-8fc8-f51644302e6c.png">
+<br>
+<img width="1440" alt="Screenshot 2023-01-04 at 9 49 53 AM" src="https://user-images.githubusercontent.com/76945354/210484841-ab4d228a-ed12-4a54-8749-0c08529d2e24.png">
+
+<br>
+<img width="1440" alt="Screenshot 2023-01-04 at 9 50 38 AM" src="https://user-images.githubusercontent.com/76945354/210484849-64b16c4b-3c39-4d97-af73-7f6cdcba0a2e.png">
+<br>
+<img width="1440" alt="Screenshot 2023-01-04 at 9 51 45 AM" src="https://user-images.githubusercontent.com/76945354/210484875-d32f4c88-8f2b-4df5-afea-e12e8bfae9ad.png">
+
+
 
 
 
